@@ -1,0 +1,29 @@
+{
+  "docId": "itom-user-guide",
+  "title": "ITOM User Guide",
+  "description": "ITOM User Guide",
+  "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
+  "productFamily": "hdocs",
+  "version": "0.0.0",
+  "audience": [
+    "public"
+  ],
+  "languages": [
+    "en"
+  ],
+  "navigation": {
+    "items": [
+      {
+        "text": "Introduction",
+        "expand": true,
+        "items": [
+          {
+            "text": "Welcome",
+            "link": "itom-user-guide/index"
+          }
+        ]
+      }
+    ]
+  },
+  "tags": []
+}
