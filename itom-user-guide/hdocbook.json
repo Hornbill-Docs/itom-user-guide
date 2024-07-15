@@ -1,7 +1,7 @@
 {
   "docId": "itom-user-guide",
   "title": "ITOM User Guide",
-  "description": "ITOM User Guide",
+  "description": "IT User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "hdocs",
   "version": "0.0.0",
@@ -14,12 +14,19 @@
   "navigation": {
     "items": [
       {
-        "text": "Introduction",
-        "expand": true,
+        "text": "Welcome",
+        "link": "itom-user-guide/index"
+      },
+      {
+        "text": "Jobs",
         "items": [
           {
-            "text": "Welcome",
-            "link": "itom-user-guide/index"
+            "text": "Job Queue",
+            "link": "itom-user-guide/jobs/job-queue"
+          },
+          {
+            "text": "Job Scheduling",
+            "link": "itom-user-guide/jobs/job-scheduling"
           }
         ]
       }
