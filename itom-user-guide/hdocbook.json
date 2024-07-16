@@ -3,8 +3,8 @@
   "title": "ITOM User Guide",
   "description": "IT User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
-  "productFamily": "hdocs",
-  "version": "0.0.2",
+  "productFamily": "com.hornbill.itom",
+  "version": "0.0.3",
   "audience": [
     "public"
   ],
