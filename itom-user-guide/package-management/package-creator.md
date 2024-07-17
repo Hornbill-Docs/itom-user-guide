@@ -38,3 +38,44 @@ The Package Creator allows for the creation of user-defined Packages for use on 
 ## Package Editor
 The package editor displays a list of resources used, one of which is the Package Info file created by the system. This file contains the configuration details that define the packages operations and how any additional resources are used. Selecting the file displays a form used to edit the details; it is also possible to edit the file in its raw XML format via the built-in editor. Additional resources such as scripts, data files can be created directly from within the interface via an editor, administrators can upload binary files such as executables and windows installer files.
 
+### Package Content Toolbar
+* **Upload**<br>Uploads files to the current folder.
+* **New Folder**<br>Creates a new Folder.
+* **New File**<br>Creates a new file in the current folder.
+* **Baseline**<br>Creates a new baseline of the current package.
+* **Save**<br>Saves amended package details.
+
+## Package Information
+The Package Info file is viewed and modified via a form, displayed by default when entering the editor or whenever the file is selected. The following details can be edited via the form excluding the Package ID and Name:
+* **Package ID**<br>A GUID that uniquely identifies the package will be generated on creation.
+* **Package**<br>The name of the package entered during creation.
+* **Description**<br>Description of the packages content.
+* **Purpose**<br>Summary of the intended use of the package.
+* **Vendor ID**<br>Defined by the creator of the package (Hornbill packages will set to "Hornbill").
+* **Target OS**<br>Specifies the target operating system that the package is designed to run on.
+
+Selecting the XML View button on the toolbar switches the form editor to a text editor where an administrator can edit the file in its native XML format. This can be useful when making changes that can be quite tedious using the form view, such as generic modifications to packaging operations.
+
+## Package Operations
+A package must contain one or more operations; each will perform an action that can be defined using one of a number of the command types. The Comand Type selected will depend on the Operating System to target the package and the functionality required. Some operations will require files to be created or uploaded before they can be configured, executing a script. Other operations such as those that execute as a single command can be configured via the interface provided.
+
+### Creating an Operation
+1. Click the Add Operation button, located on the Package Operations section.
+1. Enter a unique Operation name.
+1. Enter a Description of the operation.
+1. Select the Command Type.
+1. Click Add.
+
+:::tip
+The selected Type determines whether a command is entered or a file is selected, where a file is required, it must already have been created or uploaded to the package.
+:::
+
+### Operation Properties
+* **Operation**<br>Mandatory Name used to select the package when creating a Job.
+* **Description**<br>Describes the functionality provided by the operation.
+* **Command Type**<br>Provides a list of supported command types.
+* **Timeout**<br>Number of seconds before the operation times out, and setting the status of the Job to Timed Out.
+* **Options/Args**<br>Specifies arguments that are passed to the specified command at runtime. The format required is dependant on the Command Type being used, below are some typical examples:
+    * ***Powershell***<br>parameter1 ... parameterx -Arg1 <value> -Arg2
+    * ***Windows batch file***<br>/O /A <value> parameter1 ... parameterx
+    * ***Linux Script<br>***-arg1 <value> -arg2 --long-arg parameter1 ... parameterx
