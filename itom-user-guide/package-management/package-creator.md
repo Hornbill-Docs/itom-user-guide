@@ -79,3 +79,25 @@ The selected Type determines whether a command is entered or a file is selected,
     * ***Powershell***<br>parameter1 ... parameterx -Arg1 <value> -Arg2
     * ***Windows batch file***<br>/O /A <value> parameter1 ... parameterx
     * ***Linux Script<br>***-arg1 <value> -arg2 --long-arg parameter1 ... parameterx
+
+### Input Parameters
+Input parameters are only required if the operation requires data to be passed to it. They allow for values to be dynamically applied at execution for use by the operation. Each parameter can be identified as required (mandatory) and given a specific data type used for basic validation. Parameters can be manually assigned or populated via variables generated within a Runbook, BPM or Autotask process.
+
+To create a new parameter, from the Add Operation form:
+
+1. Click the Add Parameter button
+1. Select Optional or Required from the drop-down
+1. Set the Data type from the drop-down
+1. Enter the parameter Name
+1. If required, enter a Default value
+1. Enter the Hint text
+1. Specify if the parameter is sensitive
+
+* **Requirement**<br>Each parameter can be specified as Required or Optional.
+* **Type**<br>Specifys one of the following data types that can be entered: String, Number or Boolean. This will be used for basic validation when parameter values are entered.
+* **Parameter name**<br>Used to identify the parameter when adding it to the arguments/options list.
+* **Default value**<br>Each parameter can be provided with default value.
+* **Hint**<br>Describes the parameter and is visible during data entry.
+* **Actions**<br>Action buttons.
+    * ***Sensitivety***<br>A Toggle that marks a parameter as sensitive (struck out eye) and thus will not show its value during data entry.
+    * ***Delete***<br>Removes the parameter.
