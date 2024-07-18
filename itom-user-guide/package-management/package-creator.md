@@ -114,12 +114,12 @@ To ensure an empty string is passed when the value is blank, the parameter shoul
 This can be remedied by encapsulating the option within the parameter definition such as: {-option param.ParamA}
 
 #### Possible supported combinations
-|Format|Parameter|Value|Output|
-|-|-|-|-|
-|<option> {param.name}|abcd|-option abcd|
-|<option> {param.name}|<empty string>|-option|
-|{<option> param.name}|abcd|-option abcd|
-|{<option> param.name}|<empty string>|<blank>|
+|Format|Parameter Value|Output|
+|-|-|-|
+|`<option> {param.name}`|abcd|-option abcd|
+|`<option> {param.name}`|`<empty string>`|-option|
+|`{<option> param.name}`|abcd|-option abcd|
+|`{<option> param.name}`|`<empty string>`|<blank>|
 
 :::tip
 <option> can be any text and thus allow for all formats of options and arguments that may be required i.e. /O, -Output, --Out-file or even start. In order to specify this format just edit the parameter once it has been added or type itin manually.
