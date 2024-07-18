@@ -4,7 +4,7 @@
   "description": "IT User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "com.hornbill.itom",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "audience": [
     "public"
   ],
@@ -33,10 +33,6 @@
       {
         "text": "Run Books",
         "link": "itom-user-guide/run-books/run-books"
-      },
-      {
-        "text": "Manage Executed Runbooks",
-        "link": "itom-user-guide/runbooks/manage-executed-runbooks"
       },
       {
         "text":"Inventory",
