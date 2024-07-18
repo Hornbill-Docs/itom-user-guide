@@ -101,3 +101,35 @@ To create a new parameter, from the Add Operation form:
 * **Actions**<br>Action buttons.
     * ***Sensitivety***<br>A Toggle that marks a parameter as sensitive (struck out eye) and thus will not show its value during data entry.
     * ***Delete***<br>Removes the parameter.
+
+### Adding Parameters to Options / Arguments
+For values to be passed to an operation command, a parameter will be required to pass them via the Options / Args field. The ordering and format will depend on what is required by the target of the specified Command Type. Input Parameters have the syntax of {param.<parameter name>} and is placed where the value is expected when the command is executed.
+PackageOperationParamSelector.png
+Parameters are entered manually; however, if the letters pa are entered, a list of all of the operation's input parameters are provided, and one can be selected from the list. Entering any further characters will filter the list based on whether any entries contain the entered character.
+
+During the execution of the operation, if the parameter value is blank, nothing is output and may not be the desired effect, as detailed in the following scenarios:
+1. The parameter is passed as a positional parameter and requires an empty string to be passed if blank.
+To ensure an empty string is passed when the value is blank, the parameter should be encapsulated within quotes. "{param.ParamA}"
+1. The parameter value is paired with an option such as -option {param.ParamA}, if the value of {param.ParamA} is blank; then the -option is not removed.
+This can be remedied by encapsulating the option within the parameter definition such as: {-option param.ParamA}
+
+#### Possible supported combinations
+|Format|Parameter|Value|Output|
+|-|-|-|-|
+|<option> {param.name}|abcd|-option abcd|
+|<option> {param.name}|<empty string>|-option|
+|{<option> param.name}|abcd|-option abcd|
+|{<option> param.name}|<empty string>|<blank>|
+
+:::tip
+<option> can be any text and thus allow for all formats of options and arguments that may be required i.e. /O, -Output, --Out-file or even start. In order to specify this format just edit the parameter once it has been added or type itin manually.
+:::
+
+### Output Parameters
+Output parameters allow output from the package operation to be accessed after an IT Automation has been executed. When executed within a BPM process or Runbook, the process can access the output parameters via self-named variables enabling the values to be used as inputs to other nodes within the process. Similar to input parameters, each can be specified as required and are provided with a data type.
+
+To create a new parameter, click the Add Parameter button on the Add Package Operation form.
+* **Requirement**<br>Each parameter can be specified as Required or Optional. If a required parameter is not returned in the operation's output, the IT Automation will return a failure after the package has been executed.
+* **Type**<br>Specifys one of the following data types that parameter must be: String, Number or Boolean. This will be used for basic validation when parameter values are entered.
+* **Parameter name**<br>Used to identify output parameters returned by the operation.
+* **Default value**<br>Each parameter can be provided with default value.
