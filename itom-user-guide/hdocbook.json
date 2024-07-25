@@ -4,7 +4,7 @@
   "description": "IT User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "com.hornbill.itom",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "audience": [
     "public"
   ],
@@ -23,6 +23,10 @@
           {
             "text": "Job Queue",
             "link": "itom-user-guide/jobs/job-queue"
+          },
+          {
+            "text": "Discovery Job",
+            "link": "itom-user-guide/jobs/discovery-job"
           },
           {
             "text": "Job Scheduling",
