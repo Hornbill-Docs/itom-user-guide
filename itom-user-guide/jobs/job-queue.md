@@ -4,6 +4,9 @@ The Job Queue provides a mechanism to create, view, and manage active and comple
 When a Job completes successfully or fails a Debug Log will be available, which provides information that can be of use when troubleshooting issues. The output provided will depend on the package/discovery job that has been executed.
 
 ## Job Queue List
+
+![Job Queue List](_books/itom-user-guide/jobs/images/job-queue-list.png)
+
 * **Job Id**<br>Job identification number.
 * **Name**<br>Name provided for the job when created.
 * **Type**<br>The type of Job, can be either Discovery or IT Automation.
@@ -43,9 +46,15 @@ Where it is required for a Job to be Canceled, for example; maybe the job has st
 
 Once a Job has been started all process Id's are visible within the Job's Monitor. The following shows that a job was started using the "Run As" feature, and thus created three process IDs, The Package Execution process (EspSisExec.exe), The Elevated "Run As" Package Execution Process (EspSisExecRunAs.exe) and finally the package payload (in this example Dotter.exe).
 
+![Monitor Canceled Job](_books/itom-user-guide/jobs/images/monitor-canceled-jobs.png)
+
 The running process can also be identified using the above PIDs, on the target device by listing the device process list. On a Windows device, this can be achieved via the Task Manager or via the command line using tasklist.exe.
 
+![Tasklist](_books/itom-user-guide/jobs/images/canceled-job-tasklist.png)
+
 Clicking the Cancel button will be acknowledged, and the status set to "Canceling" and once the processes are terminated the Jobs status will be set to Canceled.
+
+![Cancel Request Sent](_books/itom-user-guide/jobs/images/cancel-request-sent.png)
 
 :::tip
 In most cases just Canceling a job should suffice, however in cases where this option fails, an Abort option is available to force the termination, accessed via the Job's Details Action Buttons.
