@@ -4,7 +4,7 @@
   "description": "IT Operations Management User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "com.hornbill.itom",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "audience": [
     "public"
   ],
@@ -12,7 +12,7 @@
     "en"
   ],
   "navigation": {
-   "items": [
+    "items": [
       {
         "text": "Welcome",
         "link": "itom-user-guide/index"
@@ -39,19 +39,19 @@
         "link": "itom-user-guide/run-books/run-books"
       },
       {
-        "text":"Inventory",
-        "link":"itom-user-guide/inventory/inventory"
+        "text": "Inventory",
+        "link": "itom-user-guide/inventory/inventory"
       },
       {
-        "text":"Package Management",
+        "text": "Package Management",
         "items": [
           {
-            "text":"Installed Packages",
-            "link":"itom-user-guide/package-management/installed-packages"
+            "text": "Installed Packages",
+            "link": "itom-user-guide/package-management/installed-packages"
           },
           {
-            "text":"Package Creator",
-            "link":"itom-user-guide/package-management/package-creator"
+            "text": "Package Creator",
+            "link": "itom-user-guide/package-management/package-creator"
           }
         ]
       }

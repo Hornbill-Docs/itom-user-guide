@@ -1,18 +1,18 @@
 # Job Scheduling
-These are Discovery or Automation jobs that can be scheduled to execute in the future, this could be once only or on a regular occurrence. A Log is produced detailing information relating to the job being scheduled to be executed at the allotted time. Detailed information for each execution can be obtained via the Job History, containing an entry for each time the specific Job is run. Drilling down into the Job History allows the Monitor, Console Output and Debug Log to be viewed as per Ad-Hoc Jobs discussed earlier.
+You can schedule discovery and automation jobs to execute in the future, once only or as a regular occurrence. A log is produced detailing information relating to the job being scheduled to be executed at the set time. In the Job History, you can view detailed information for each execution; there is one entry for each time the specific job is run. Drilling down into the Job History allows the Monitor, Console Output, and Debug Log to be viewed as per ad-hoc jobs discussed earlier.
 
 ## Toolbar
-The Scheduled Jobs view provides a list of all past and future scheduled jobs from here you can Refresh, Filter, Delete and Create new scheduled jobs.
+The Scheduled Jobs view provides a list of all past and future scheduled jobs. From here you can refresh, filter, delete, and create new scheduled jobs.
 
-* **Refresh**<br>Refresh the list of Scheduled jobs.
-* **Type**<br>Filter the list by: Discovery, Runbook, and IT Automation Jobs.
+* **Refresh**<br>Refresh the list of scheduled jobs.
+* **Type**<br>Filter the list by Discovery, Runbook, and IT Automation Jobs.
 * **Status**<br>Filter the list by the available statuses including All, Disabled, Scheduled, Failed, and Completed.
-* **Filter**<br>Free text Search that filters the list based on Name and Tag.
-* **Delete Selected**<br>This will delete any Scheduled Job that has been selected in the list using the check boxes.
+* **Filter**<br>Free text search that filters the list based on name and tag.
+* **Delete Selected**<br>Delete any scheduled job that has been selected in the list using the checkboxes.
 * **Create New**<br>Create a new Discovery, Runbook, or IT Automation job.
 
 :::tip
-The view is generally refreshed when the state of Job changes, and can also be refreshed using the Refresh button at the top of the view. Where there are a large number of entries, paging is available.
+The view is generally refreshed when the state of the job changes, and can also be refreshed using the **Refresh** button at the top of the view. Where there are a large number of entries, paging is available.
 :::
 
 ## Job Types
