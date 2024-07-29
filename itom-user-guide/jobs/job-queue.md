@@ -1,5 +1,5 @@
 # Job Queue
-Use the Job Queue to create, view, and manage active and completed jobs. You can check the current status and progress of a job in the Monitor console. Once a job has completed, the Console Output provides the sanitized output produced by the package or discover job.
+Use the Job Queue to create, view, and manage active and completed jobs. You can check the current status and progress of a job in the Monitor console. Once a job has been completed, the Console Output provides the sanitized output produced by the package or discovery job.
 
 When a job completes successfully or fails, you can view the debug log for information that can be of use when troubleshooting issues. The output provided will depend on the package/discovery job that has been executed.
 
@@ -8,8 +8,8 @@ When a job completes successfully or fails, you can view the debug log for infor
 ![Job Queue List](_books/itom-user-guide/jobs/images/job-queue-list.png)
 
 * **Job Id**<br>Job identification number.
-* **Name**<br>Name provided for the job when created.
-* **Type**<br>The type of job, can be either Discovery or IT Automation.
+* **Name**<br>The name provided for the job when created.
+* **Type**<br>The type of job which can be either Discovery or IT Automation.
 * **Status**<br>Shows the current status of the job.
 * **Target**<br>Shows the name of the computer on which the job will run.
 * **Child Jobs**<br>Shows whether the job has spawned any children.
@@ -18,7 +18,7 @@ When a job completes successfully or fails, you can view the debug log for infor
 * **Completed On**<br>Displays the date/time the job completed execution.
 
 ## Job Queue toolbar
-* **Refresh**<br>A refresh of the list may be required to update job status or any new jobs that have been executed.
+* **Refresh**<br>A refresh of the list may be required to update the job status or any new jobs that have been executed.
 * **Type**<br>Filter the list by job type.
     * ***All***<br>Lists all jobs.
     * ***Discovery***<br>List all Discovery jobs.
