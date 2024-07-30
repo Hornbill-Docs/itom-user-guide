@@ -6,6 +6,8 @@ Lists are a great way to organize and maintain managed devices within the viewer
 ## Inventory Toolbar
 The Inventory toolbar allows actions to be executed on one or more inventory items as detailed below and provides various filtering and refresh options.
 
+![Inventory toolbar](_books/itom-user-guide/inventory/images/inventory-toolbar.png)
+
 * **Refresh**<br>A refresh of the list may be required to display any new devices discovered while you are viewing the list.
 * **Show**<br>
     * ***All Managed Inventory***<br>Show only the devices that categorized as Managed.
@@ -19,7 +21,11 @@ The Inventory toolbar allows actions to be executed on one or more inventory ite
     * ***Delete Device***<br>This will permanently remove the device from the list.
 
 ## Inventory List
-The inventory list displays the discovered (Managed or Un-Managed) Inventory items and provides access to an items properties and Job Queue. User-defined lists are created and populated from here, and dynamic filtering is also available. Sort the list by clicking on the individual column headers, an indicator displayed next to the sort column stating the sort order as Ascending (AdminToolListHeaderAsc.png) or Descending (AdminToolListHeaderDesc.png). Select Multiple items from the list to execute actions on more than one item; alternatively, the dropdown button next to each item is used to perform actions for individual items.
+The inventory list displays the discovered (Managed or Un-Managed) Inventory items and provides access to an items properties and Job Queue. 
+
+![Inventory List](_books/itom-user-guide/inventory/images/inventory-list.png)
+
+User-defined lists are created and populated from here, and dynamic filtering is also available. Sort the list by clicking on the individual column headers, an indicator displayed next to the sort column stating the sort order as Ascending (AdminToolListHeaderAsc.png) or Descending (AdminToolListHeaderDesc.png). Select Multiple items from the list to execute actions on more than one item; alternatively, the dropdown button next to each item is used to perform actions for individual items.
 
 * **Action**<br>Using this drop-down icon, you can select from several actions that you can apply against this individual inventory item.
 * **Name**<br>Device hostname. Clicking on the hostname will display a detailed Properties list for this inventory item.
@@ -32,6 +38,8 @@ The inventory list displays the discovered (Managed or Un-Managed) Inventory ite
 
 ## Device Properties
 Clicking on the Device Name will display properties discovered for the selected item; the following information is available:
+
+![Device Properties](_books/itom-user-guide/inventory/images/device-properties.png)
 
 * Summary (Name, Discovered On, Ping, DNS)
 * Manufacturer / Hardware (showing Model, Serial Number, CPU & Memory)
@@ -64,6 +72,8 @@ These lists provide a mechanism to allow for IT Automations or Runbook jobs exec
 #### Individual
 1. Locate a Managed Device
 1. Click the dropdown and select +Add To Managed List
+
+    ![Add Device to List](_books/itom-user-guide/inventory/images/inventory-add.png)
 
 ### Removing Devices from a List
 #### Multiple
