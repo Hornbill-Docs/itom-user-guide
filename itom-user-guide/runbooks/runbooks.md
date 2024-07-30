@@ -1,4 +1,4 @@
-# Run Books
+# Runbooks
 Orchestration is fulfilled via the creation of a Runbook, enabling different operations to be bound together within a business process to perform a complete end to end solution. Allowing for the standardization/automation of best practices that improve efficiency, reliability and reducing user error. As an example, the onboarding of a new user could require the following to be set-up / configured:
 
 * AD User Account creation
