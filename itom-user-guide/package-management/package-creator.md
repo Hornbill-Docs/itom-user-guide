@@ -1,6 +1,8 @@
 # Package Creator
 The Package Creator allows for the creation of user-defined Packages for use on an instance. A Package consists of a single Package Info file and with additional resource files where required. The info file contains all the details regarding operations and all parameters that may be necessary. Although it is possible to create a Package manually, a form-based editor is provided to simplify uploading and organizing resources. These files are used to provide or support a package's operations a can be a combination of one or more scripts, executables and other supported filetypes. In addition to uploading files, an interface is also provided to create and edit various file types via a browser-based editor that supports syntax highlighting.
 
+![Package Creator List](_books/itom-user-guide/package-management/images/package-list.png)
+
 ## Toolbar
 * **Refresh**<br>
 * **Target OS**<br>Operating System that the package was designed for execution.
@@ -39,6 +41,10 @@ The Package Creator allows for the creation of user-defined Packages for use on 
 The package editor displays a list of resources used, one of which is the Package Info file created by the system. This file contains the configuration details that define the packages operations and how any additional resources are used. Selecting the file displays a form used to edit the details; it is also possible to edit the file in its raw XML format via the built-in editor. Additional resources such as scripts, data files can be created directly from within the interface via an editor, administrators can upload binary files such as executables and windows installer files.
 
 ### Package Content Toolbar
+
+![Package Content](_books/itom-user-guide/package-management/images/package-content.png)
+
+
 * **Upload**<br>Uploads files to the current folder.
 * **New Folder**<br>Creates a new Folder.
 * **New File**<br>Creates a new file in the current folder.
@@ -46,7 +52,10 @@ The package editor displays a list of resources used, one of which is the Packag
 * **Save**<br>Saves amended package details.
 
 ## Package Information
-The Package Info file is viewed and modified via a form, displayed by default when entering the editor or whenever the file is selected. The following details can be edited via the form excluding the Package ID and Name:
+The Package Info file is viewed and modified via a form, displayed by default when entering the editor or whenever the file is selected. The following details can be edited via the form excluding the Package ID and Name.
+
+![Package Properties](_books/itom-user-guide/package-management/images/package-properties.png)
+
 * **Package ID**<br>A GUID that uniquely identifies the package will be generated on creation.
 * **Package**<br>The name of the package entered during creation.
 * **Description**<br>Description of the packages content.
@@ -58,6 +67,8 @@ Selecting the XML View button on the toolbar switches the form editor to a text 
 
 ## Package Operations
 A package must contain one or more operations; each will perform an action that can be defined using one of a number of the command types. The Comand Type selected will depend on the Operating System to target the package and the functionality required. Some operations will require files to be created or uploaded before they can be configured, executing a script. Other operations such as those that execute as a single command can be configured via the interface provided.
+
+![Package Operation](_books/itom-user-guide/package-management/images/package-operations.png)
 
 ### Creating an Operation
 1. Click the Add Operation button, located on the Package Operations section.
@@ -83,6 +94,8 @@ The selected Type determines whether a command is entered or a file is selected,
 ### Input Parameters
 Input parameters are only required if the operation requires data to be passed to it. They allow for values to be dynamically applied at execution for use by the operation. Each parameter can be identified as required (mandatory) and given a specific data type used for basic validation. Parameters can be manually assigned or populated via variables generated within a Runbook, BPM or Autotask process.
 
+![Package Input Params](_books/itom-user-guide/package-management/images/package-operations-input.png)
+
 To create a new parameter, from the Add Operation form:
 
 1. Click the Add Parameter button
@@ -104,7 +117,9 @@ To create a new parameter, from the Add Operation form:
 
 ### Adding Parameters to Options / Arguments
 For values to be passed to an operation command, a parameter will be required to pass them via the Options / Args field. The ordering and format will depend on what is required by the target of the specified Command Type. Input Parameters have the syntax of {param.<parameter name>} and is placed where the value is expected when the command is executed.
-PackageOperationParamSelector.png
+
+![Package Operations Params Selector](_books/itom-user-guide/package-management/images/package-operation-param-selector.png)
+
 Parameters are entered manually; however, if the letters pa are entered, a list of all of the operation's input parameters are provided, and one can be selected from the list. Entering any further characters will filter the list based on whether any entries contain the entered character.
 
 During the execution of the operation, if the parameter value is blank, nothing is output and may not be the desired effect, as detailed in the following scenarios:
@@ -128,8 +143,123 @@ This can be remedied by encapsulating the option within the parameter definition
 ### Output Parameters
 Output parameters allow output from the package operation to be accessed after an IT Automation has been executed. When executed within a BPM process or Runbook, the process can access the output parameters via self-named variables enabling the values to be used as inputs to other nodes within the process. Similar to input parameters, each can be specified as required and are provided with a data type.
 
+![Package Output Params](_books/itom-user-guide/package-management/images/package-operations-output-params.png)
+
 To create a new parameter, click the Add Parameter button on the Add Package Operation form.
 * **Requirement**<br>Each parameter can be specified as Required or Optional. If a required parameter is not returned in the operation's output, the IT Automation will return a failure after the package has been executed.
 * **Type**<br>Specifys one of the following data types that parameter must be: String, Number or Boolean. This will be used for basic validation when parameter values are entered.
 * **Parameter name**<br>Used to identify output parameters returned by the operation.
 * **Default value**<br>Each parameter can be provided with default value.
+
+### Output Parameters Syntax
+Output parameters are processed after the execution of an IT Automation and are identified by the output using the following syntax:
+
+`{{SISJobOutputParameterStart:<param-name>}}<value>{{SISJobOutputParameterEnd}}`
+
+* **`<param-name>`**<br>The name of the configured output parameter
+* **`<value>`**<br>The value to store, and one entry will be required for each required parameter.
+
+Providing the formatted output is relatively straightforward when the script or program is designed in-house; however, attempting to use a third-party script or program that is not modifiable can prove difficult. In these circumstances, there are still options available:
+* Create a wrapper script and reformat the output to match the required syntax
+* Use the scripts/programs return code to provide feedback
+
+Utilizing the return codes can be a quick, simple way to capture output parameter values that can be used logically within a process. The Options / Args field can specify input parameters for the command and contain the logic to deal with any return code. The following examples show what can be achieved for different command types:
+
+#### Windows Commands
+|Command Type|Run Command|
+|-|-|
+|Command|cmd /c find|
+|Options/Args|"{param.searchstring}" "C:\ProgramData\Hornbill\Site Integration Server\log\EspSisService.log" && echo {{SISJobOutputParameterStart:outcome}}OK{{SISJobOutputParameterEnd}} || echo {{SISJobOutputParameterStart:outcome}}FAIL{{SISJobOutputParameterEnd}}
+
+#### Linux Commands
+|Command Type|Run Command|
+|-|-|
+|Command|grep|
+|Options/Args|/var/log/syslog -e "{param.searchstring}"; error=$?; if [ $error == 0 ]; then echo "{{SISJobOutputParameterStart:outcome}}OK{{SISJobOutputParameterEnd}}"; else echo "{{SISJobOutputParameterStart:outcome}}FAIL{{SISJobOutputParameterEnd}}"; echo "{{SISJobOutputParameterStart:errors}}$error{{SISJobOutputParameterEnd}}"; fi|
+
+#### Powershell Commands
+|Command Type|Run Command|
+|-|-|
+|Command|powershell -Command|
+|Options/Args|"& { if(Select-String -Path 'C:\ProgramData\Hornbill\Site Integration Server\log\EspSisService.log' -Pattern '{param.searchstring}' -Quiet) {Write-Host '{{SISJobOutputParameterStart:outcome}}OK{{SISJobOutputParameterEnd}}'} else {Write-Host '{{SISJobOutputParameterStart:outcome}}FAIL{{SISJobOutputParameterEnd}}' }" }|
+
+### Managing Files
+
+![Package File Editor](_books/itom-user-guide/package-management/images/package-file-editor.png)
+
+As well as being able to upload files for use by operations, it is also possible to create files directly via the interface. The editor supports the following file types and also provides enhanced usability with the use of syntax highlighting.
+
+|File Type|Description|
+|-|-|
+|.bat|Command Prompt Batch process files|
+|.ps1|Powershell and Powershell Core scripts|
+|.js|Javascript|
+|.sh|Unix/Linux and macOS Shell script|
+|.txt|Text format file|
+|.json|JavaScript Object Notation file|
+|.csv|Comma Seperated Value file|
+
+:::tip
+The following will affect the entire instance!
+
+Some of the above files are restricted by default; and can be allowed by disabling the System Setting: security.fileUploadRestriction.entity.fileAttachments.enable or alternatevly remove the relevant extensions from the System Setting: security.fileUploadRestriction.entity.fileAttachments.types.
+:::
+
+#### Upload a File
+
+![Package File Upload](_books/itom-user-guide/package-management/images/package-content.png)
+
+1. Click the `Upload File` button
+1. Select the File to Upload. The file appears in the file list
+1. Select the File to View in the Editor pane
+
+#### Create a New Folder
+1. Click the `Add New Folder` button
+1. Enter the Folder Name
+
+#### Add New File
+1. Click the `Add New File` button
+1. Enter the file name
+
+The following actions are executed on individual files and folders; ensure that the correct file or folder is selected first from the file list. The menu options are context-sensitive and will only display the options relevant to the selected item.
+
+![Package File Editor Toolbar](_books/itom-user-guide/package-management/images/package-file-editor-toolbar.png)
+
+* Delete a File or Folder
+    1. Select the File or Folder to Delete
+    1. Click the Delete button
+* Download a File
+    1. Select the File to Download
+    1. Click the Upload button. The file will appear in the browsers download folder.
+
+#### Save a File
+The Save button is enabled when a file is loaded into the editor and its contents have changed. Clicking on the Save will save the changes and reset the buttons state. Exiting from the editor also prompts to save the file, with the option to Save, Cancel or Ignore the changes.
+
+## Baselining and Publishing
+A Baseline is a snapshot of a package's current state, only available once the package is in a state where it is ready to be published (at least one Package Operation exist).
+
+![Package Baseline Version](_books/itom-user-guide/package-management/images/package-content-baseline-versions.png)
+
+The draft version of a package is the only version that can be updated. Once the Package is ready for release, the draft copy can be Baselined, creating a new version. This latest version is then available for packaging and installation on the Installed Packages list.
+
+To enable the Baseline once the initial package has been created, the user must highlight the Package Info file in the file list. Once clicked, a confirmation pop appears, and the dropdown next to the Baseline Button will display a list of Baselined versions.
+
+To publish and install or download a baselined version, select the relevant version from the list. The Baseline button will change to the Package and Installwhen clicked, two options are provided:
+
+![Package Draft Install](_books/itom-user-guide/package-management/images/package-content-draft-install.png)
+
+* **Package and Install**<br>Build the package and add to the Install Packages list, Overwriting any existing version.
+* **Package and Download**<br>Build the package and Download to the local computer.
+
+The package details will be read-only to change any details; The user must select the draft version by clicking the View Draft button.
+
+### Baseline and Publish a new version of a package
+1. Select the ITOM Package Creator
+1. From the list select a package
+1. Click the Baseline button
+1. Select the Baseline button drop-down
+1. Select the last version
+1. Click Package and Install, and select Package and Install
+1. Use the Breadcrumbs to go back to the Package Creator list
+
+The Package should now appear in the list with the latest version shown; all subsequent Jobs, including previously scheduled jobs, will now use the newly published version.
