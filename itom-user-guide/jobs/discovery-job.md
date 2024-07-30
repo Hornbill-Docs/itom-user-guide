@@ -31,6 +31,47 @@ The retrieved data serves as a valuable source for importing assets into the Ser
     * ***Timeout***<br>
     * ***Hop Count***<br>
 
+### Discovery Modes
+#### Active Directory
+Searches Active Discovery to provide a list of Windows Devices (Servers, Domain Controllers and Workstations) from a defined starting point (search base) within the Directory, and recurse through all Domains, Containers and OUs.
+
+* **Container**<br>Specifies the starting point (search base), within the directory tree. Enter the FQDN to specify the root of a domain, if specifying a container or OU add a "/" and its name domain.local/Users.
+* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+
+#### LDAP Server
+Connects to a directory service that supports the LDAP protocol in order to extract a list of devices to be discovered. A recursive search is performed from the specified LDAP root retrieving resources with the attribute objectClass set to "computer". Additional search criteria can be provided via the use of standard search strings.
+
+* **LDAP Server**<br>The hostname, FQDN or IP address of the server where the Directory Service is hosted.
+* **LDAP Root Directory**<br>The distinguished name specifying the starting location from within the directory, if blank then the entire directory will be scanned.
+* **LDAP Filter**<br>Standard LDAP search criteria
+* **LDAP Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password or LDAP authentication, if not supplied then anonymous access will be attempted. The account used must have the required read permission to access the Directory.
+* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+
+#### Manual List
+The manual list allows for one or more device names or addresses to be used by the discovery process, entries can be in the form of any of the following:
+
+* **Machine / IP / CIDR List**<br>One or more of the following (separated by spaces): FQDN, Hostname, IP or CIDR list
+
+    ||Example|
+    |-|-|
+    |Machine (FQDN or Hostname)|computer01.acme.co.uk or computer01|
+    |IP Address|Single IP Address x.x.x.x (192.168.1.1)<br>IP Range x.x.x.x-x (192.168.0.1-254) Provides a list 254 addresses (192.168.0.1 -> 192.168.0.254)<br>IP Range x.x.x.x-x.x (192.168.0.1-255.254) Provides a list 65534 addresses (192.168.0.1 -> 192.168.255.254)
+    |CIDR|x.x.x.x/x (192.168.0.0/24) Provides a list 254 addresses (192.168.0.1 -> 192.168.0.254)
+
+* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+
+#### Network Enumeration
+Utilizes the Windows NT Computer Browser Service to retrieve a list of devices actively connected to the network. For each Job, only member devices from a single DOMAIN or WORKGROUP can be returned, thus a separate job will be required for each. It may be necessary to enable the Computer Browser Service on at least one Windows computer if so we recommend that this is done on the server hosting the SIS. It may also be required to enable NetBIOS over TCP/IP on all the individual Windows computers. In order to discover Windows computers that are a member of a Workgroup, at least one of the computers within the workgroup will also require the Computer Browser service to be enabled.
+
+* **Domain**<br>The NetBios name given to the AD Domain or Windows Workgroup.
+* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+
+#### Browser Service List
+Utilizes the Windows NT Computer Browser Service to retrieve a list of devices actively connected to the network. For each Job, only member devices from a single DOMAIN or WORKGROUP can be returned, thus a separate job will be required for each. It may be necessary to enable the Computer Browser Service on at least one Windows computer if so we recommend that this is done on the server hosting the SIS. It may also be required to enable NetBIOS over TCP/IP on all the individual Windows computers. In order to discover Windows computers that are a member of a Workgroup, at least one of the computers within the workgroup will also require the Computer Browser service to be enabled.
+
+* **Domain**<br>The NetBios name given to the AD Domain or Windows Workgroup
+* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+
 ## Job details
 Once a job is completed, information is displayed in the Monitor and Console Output, including debug logging that can help with troubleshooting failures.
 
