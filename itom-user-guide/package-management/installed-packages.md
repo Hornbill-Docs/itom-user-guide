@@ -37,3 +37,21 @@ An administrator can remove packages by selecting one or more packages from the 
 :::tip
 All scheduled jobs utilizing the package will fail once the Job executes, the failure will appear within the Jobs Log. A failure message will also appear when opening a scheduled Job that uses the package.
 :::
+
+## Package Library
+The Package Library List enables for the Installation and Updating of published packages. As new packages become available for use, they will become visible on the list and will contain an Install button next to the entry. Clicking on Install will allow for the package to be available for use, for IT Automations. Once a package has been installed any updates to the package will not automatically be made available. Updates to packages are visible via the Update button next to the entry. The package version information is also visible via the list entry, showing the latest package version and the installed version.
+
+### Package Library List
+
+![Package Library List](_books/itom-user-guide/package-management/images/package-library.png)
+
+* **Name**<br>Name of the Installed Package.
+* **Purpose**<br>Shows a summary of what the package interfaces with.
+* **Version**<br>The latest version of the package listed in the package library.
+* **Installed Version**<br>The version of the package installed within the instance.
+
+### Toolbar and Form Controls
+* **Filter**<br>Free Text filter to search by Name, Purpose.
+* **Install**<br>Install a Package for use within an IT Automation or Runbook.
+* **Update**<br>Update a Package to the latest version.
+* **Information**<br>Hovering over the Information at the beginning of the package list entry, a more detailed description is displayed.
