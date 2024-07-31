@@ -38,6 +38,19 @@ When a job completes successfully or fails, you can view the debug log for infor
 * **Delete**<br>Delete selected jobs
 * **Create New**<br>Creates a new Discover or IT Automation job
 
+## Create New Jobs
+From the Job Queue List, it is possible to create Ad-Hoc Discovery, IT Automation, and Asset Import jobs. These jobs will be added to the Queue and executed once a registered and available SIS server downloads the Job from the cloud for processing. Credentials may be required to execute Jobs and will require creation within the Hornbill KeySafe beforehand. When creating an IT Automation Job a user must be aware of the Package to use and the relevant configuration details. This information can be sourced from the ITOM Package Library.
+
+### Credentials
+These are required to execute jobs with the permissions and rights necessary to complete the task. Depending on the Job type, and Package used, one or more Credentials may need to be specified.
+
+* **Admin Credentials**<br>Used when the Package is deployed to the Target Machine and must have administration rights on the Target.
+* **Run As Credentials**<br>Once deployed, the Package will need to be executed, by default; this will use the security context of that provided by the Admin Credentials. In some scenarios, this may not suffice as alternative rights may be required. The Run As Credentials will be used to provide an additional Credential for this purpose.
+
+    :::tip
+    The Service Account used for the SIS that facilitates the execution of the Job is employed where no Credentials are specified. By default, the Local System account will not have the correct rights to deploy or execute any package on a computer other than the one that the SIS is installed on.
+    :::
+
 ## Activate Selected Jobs
 Enables all selected deferred jobs to be activated for processing.
 
