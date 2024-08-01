@@ -4,7 +4,7 @@
   "description": "IT Operations Management User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "com.hornbill.itom",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "audience": [
     "public"
   ],
@@ -27,6 +27,10 @@
           {
             "text": "Discovery Job",
             "link": "itom-user-guide/jobs/discovery-job"
+          },
+          {
+            "text": "IT Automation Job",
+            "link": "itom-user-guide/jobs/it-automation-job"
           },
           {
             "text": "Job Scheduling",
