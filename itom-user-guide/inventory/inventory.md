@@ -55,7 +55,7 @@ Click on the device name to display properties discovered for the selected item.
 * **Network.**
 * **Installed OS Options.**
 * **Installed Software.** This is filterable.
-* **Job Queue.** This provides the same interface as that used within the main Job Queue, with the difference here being that only jobs for the selected item are visible and able to be created. For further details on the functionality of this feature, see [Job Queue](/itom-user-guide/jobs/job-queue.md).
+* **Job Queue.** This provides the same interface as that used within the main Job Queue, with the difference here being that only jobs for the selected item are visible and able to be created. For further details on the functionality of this feature, see [Job Queue](/itom-user-guide/jobs/job-queue).
 
 :::note
 For unmanaged devices, only the Summary information is available.
