@@ -1,89 +1,94 @@
 # Inventory
-The Inventory Viewer provides an interface to organize discovered devices and categorize them as Managed / Un-Managed Devices, as well as removing them. Once marked as Managed, a device subscription is consumed for a minimum of 30 days, after which this or any other Un-managed device will be able to re-use it. Inventory details and the execution of IT Automation jobs are only available for Managed Devices.
+In Inventory, you can organize discovered devices, categorize them as managed or unmanaged, and remove them.
 
-Lists are a great way to organize and maintain managed devices within the viewer and provide a mechanism for IT Automation Job deployment to multiple targets.
+Only managed devices can be used a targets for a job. Likewise, inventory details are only available for managed devices. 
 
-## Inventory Toolbar
+When a device is discovered, it is initially marked as unmanaged. You can then manually mark the device as managed. 
+
+Once a device has had a job run against it, a subscription begins and it is not possible to mark the device as unmanaged for 30 days. This 30-day period resets every time a subsequent job is run against that device. Once the 30-day period is over, the same device or any other device can reuse the subscription.
+
+## Topics covered
+* [Inventory toolbar](/itom-user-guide/inventory/inventory#inventory-toolbar)
+* [Inventory list](/itom-user-guide/inventory/inventory#inventory-list)
+* [Device properties](/itom-user-guide/inventory/inventory#device-properties)
+* [Managed lists](/itom-user-guide/inventory/inventory#managed-lists)
+
+## Inventory toolbar
 The Inventory toolbar allows actions to be executed on one or more inventory items as detailed below and provides various filtering and refresh options.
 
-![Inventory toolbar](_books/itom-user-guide/inventory/images/inventory-toolbar.png)
+* **Refresh.** Click this to refresh the display in case any new devices are discovered while you are viewing the list.
+* **Show.**
+    * **All Managed Inventory.** Show only the devices that are categorized as Managed.
+    * **All Unmanaged Inventory.** Show only those categorized as Unmanaged.
+    * **Add Selected To a Managed List.** By selecting multiple devices in the list using the checkboxes, you can add these into an available Managed List.
+    * **Create List.** Create a new list for managing or grouping devices.
+* **Free-text filter.** Search by name, manufacturer, model, or operating system.
+* **Action buttons.** Each action applies to one or more selected devices in the inventory list.
+    * **Toggle Managed Status.** Toggle between Selected As Managed and Selected as Unmanaged.
+    * **Add Selected to A Managed List.** This is only available for Managed CIs.
+    * **Delete Device.** This permanently removes the device from the list.
 
-* **Refresh**<br>A refresh of the list may be required to display any new devices discovered while you are viewing the list.
-* **Show**<br>
-    * ***All Managed Inventory***<br>Show only the devices that categorized as Managed.
-    * ***All Un-managed Inventory***<br>Show only those categorized as Un-managed.
-    * ***Add Selected To a Managed List***<br>By selecting multiple devices in the list using the checkboxes, you can add these into an available Managed List.
-    * ***Create List***<br>Create a new list for managing or grouping devices.
-* **Free Text Filter**<br>Free Text filter to search by Name, Manufacturer, Model or Operating System.
-* **Action Buttons**<br>Each Action applies to one or more selected devices in the Inventory List.
-    * ***Toggle Managed Status***<br>Set Selected As Managed / Set Selected as Un-managed.
-    * ***Add Selected to A Managed List***<br>This is only available for Managed CIs
-    * ***Delete Device***<br>This will permanently remove the device from the list.
+## Inventory list
+The inventory list displays the discovered (managed and unmanaged) inventory items and provides access to each item's properties and Job Queue.
 
-## Inventory List
-The inventory list displays the discovered (Managed or Un-Managed) Inventory items and provides access to an items properties and Job Queue. 
+User-defined lists are created and populated from here, and dynamic filtering is also available. Sort the list by clicking on the individual column headers; an indicator displayed next to the sort column states the sort order as ascending or descending. 
 
-![Inventory List](_books/itom-user-guide/inventory/images/inventory-list.png)
+Select multiple items from the list to execute actions on more than one item. To execute actions on individual items, use the dropdown button next to each item.
 
-User-defined lists are created and populated from here, and dynamic filtering is also available. Sort the list by clicking on the individual column headers, an indicator displayed next to the sort column stating the sort order as Ascending (AdminToolListHeaderAsc.png) or Descending (AdminToolListHeaderDesc.png). Select Multiple items from the list to execute actions on more than one item; alternatively, the dropdown button next to each item is used to perform actions for individual items.
+* **Action.** Use this dropdown to select from several actions that you can apply against this individual inventory item.
+* **Name.** Device hostname. Click on the hostname to display detailed properties for this inventory item.
+* **Manufacturer.** Shows the device's manufacturer.
+* **Model.** Shows the device's model details.
+* **OS.** The device's installed operating system.
+* **Ping.** Displays green if the device was able to respond to a ping request.
+* **DNS.** Displays green if the device was able to be identified by a DNS lookup.
+* **Discovered On.** Shows the discovery date for the device.
 
-* **Action**<br>Using this drop-down icon, you can select from several actions that you can apply against this individual inventory item.
-* **Name**<br>Device hostname. Clicking on the hostname will display a detailed Properties list for this inventory item.
-* **Manufacturer**<br>Shows the devices manufacturer.
-* **Model**<br>Devices model details.
-* **OS**<br>The devices installed Operating System.
-* **Ping**<br>Displays "Green" if the device was able to respond to a ping request.
-* **DNS**<br>Displays "Green" if the device was able to be identified by a DNS lookup.
-* **Discovered On**<br>Shows the discovery date for the device.
-
-## Device Properties
-Clicking on the Device Name will display properties discovered for the selected item; the following information is available:
+## Device properties
+Click on the device name to display properties discovered for the selected item. The following information is available:
 
 ![Device Properties](_books/itom-user-guide/inventory/images/device-properties.png)
 
-* Summary (Name, Discovered On, Ping, DNS)
-* Manufacturer / Hardware (showing Model, Serial Number, CPU & Memory)
-* Operating System
-* Network
-* Installed OS Options
-* Installed Software (filterable)
-* Job Queue
-    Provides the same interface to that used within the main Job Queue, with the difference here being that only jobs for the selected item will be visible and able to be created. For further details on the functionality of this feature, refer to the Job Queue documentation:
+* **Summary.** Name, Discovered On, Ping, and DNS.
+* **Manufacturer / Hardware.** Model, Serial Number, CPU, and Memory.
+* **Operating Software.**
+* **Network.**
+* **Installed OS Options.**
+* **Installed Software.** This is filterable.
+* **Job Queue.** This provides the same interface as that used within the main Job Queue, with the difference here being that only jobs for the selected item are visible and able to be created. For further details on the functionality of this feature, see [Job Queue](/itom-user-guide/jobs/job-queue.md).
 
-:::tip
-For Un-managed devices, only the Summary information is available.
+:::note
+For unmanaged devices, only the Summary information is available.
 :::
 
-## Managed Lists
-These lists provide a mechanism to allow for IT Automations or Runbook jobs execution across multiple devices. They are manually populated and contain managed devices, each of which can exist in various lists.
+## Managed lists
+Managed lists provide a mechanism to allow for IT automations or runbook-jobs execution across multiple devices. They are manually populated and contain managed devices, each of which can exist in various lists.
 
-### Create a Managed List
-1. Navigate to (Home > ITOM > Inventory Viewer)
-1. From the Show filter Select + Create List
-1. Enter a name for the List
-1. The new list will now appear in the list of filters
+**To create a managed list:**
+1. In the left menu bar, click the ITOM icon and under *Inventory*, click **Managed**.
+1. From the Show filter, click the **All Managed Inventory** dropdown and then **+ Create List**.
+1. Enter a name for the list and then click **Apply**.
 
-### Adding Devices to a List
-#### Multiple
-1. From the Inventory View select two or more Managed Devices
-2. Click the Add to Managed List MenuPlusWhite.png button:
-3. The List is displayed showing the added entries
+The new list will now appear in the list of filters.
 
-#### Individual
-1. Locate a Managed Device
-1. Click the dropdown and select +Add To Managed List
+**To add multiple devices to a list:**
+1. In the left menu bar, click the ITOM icon and under *Inventory*, click **Managed**.
+1. From the list of managed devices, click the checkboxes to select two or more.
+1. Click the white plus-sign button.
 
-    ![Add Device to List](_books/itom-user-guide/inventory/images/inventory-add.png)
+The list is displayed showing the added entries.
 
-### Removing Devices from a List
-#### Multiple
-1. Select the required List
-1. Click the checkbox next to each entry to be removed
-1. Select Remove Selected From ... MenuMinusButtonWhite.png button
-1. Click Yes on the Confirmation box; to remove devices from the list
+**To add an individual device to a list:**
+1. Locate a managed device.
+1. Click the down-arrow dropdown to the left of its name and select **+Add To Managed List**.
 
-#### Individual
-1. From the Show dropdown, select a populated List
-1. Locate a Managed Device
-1. Click the dropdown and select +Remove From ...
-1. Click Yes on the Confirmation box, to remove devices from the list
+**To remove multiple devices from a list:**
+1. Select the list.
+1. Click the checkbox next to each device you want to remove.
+1. Click **Remove Selected From...**.
+1. Click **Yes** to confirm you want to remove the selected devices.
+
+**To remove an individual device from a list:**
+1. From the Show dropdown, select a populated list.
+1. Locate a managed device and click the dropdown, then select **+Remove From...**.
+1. Click **Yes** to confirm you want to remove the selected device.
