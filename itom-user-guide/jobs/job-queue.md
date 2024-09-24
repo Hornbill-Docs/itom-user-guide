@@ -45,7 +45,7 @@ When a job completes successfully or fails, you can view the debug log for infor
 * **Create New.** Click to create a new Discovery or IT Automation job.
 
 ## Creating new jobs
-From the Job Queue list, you can create Discovery, IT Automation, and Asset Import jobs. These jobs will be added to the queue and executed once a registered and available SIS server downloads the job from the cloud for processing. Credentials may be required to execute jobs and will require creation within the Hornbill KeySafe beforehand.
+From the Job Queue list, you can create Discovery, IT Automation, and Asset Import jobs. These jobs will be added to the queue and executed once a registered and available SIS server downloads the job from the cloud for processing. Credentials may be required to execute jobs and will require creation within the [Hornbill KeySafe](/esp-config/security/keysafe) beforehand.
 
 When creating an IT Automation job, you must know the package to use and the relevant configuration details. You can find this information in the [ITOM Package Reference](/itom-packages/welcome).
 
@@ -53,7 +53,7 @@ When creating an IT Automation job, you must know the package to use and the rel
 Credentials are required to execute jobs with the permissions and rights necessary to complete the task. Depending on the job type and the package used, one or more credentials may need to be specified.
 
 * **Admin credentials.** Used when the package is deployed to the target machine and must have administration rights on the target.
-* **Run As credentials.** Once deployed, the package will need to be executed, by default; this will use the security context of that provided by the Admin credentials. In some scenarios, alternative rights may also be required. The Run As credentials will be used to provide an additional credential for this purpose.
+* **Run As credentials.** Once deployed, the package will need to be executed. By default, this will use the security context of that provided by the Admin credentials. In some scenarios, alternative rights may also be required; it is the Run As credentials that will be used to provide an additional credential for this purpose.
 
     :::tip
     When no credentials are specified, the Service account used for the SIS that facilitates the execution of the job is employed. By default, the local System account will not have the correct rights to deploy or execute any package on a computer other than the one that the SIS is installed on.
@@ -61,7 +61,7 @@ Credentials are required to execute jobs with the permissions and rights necessa
 
 ## Activating, canceling, and deleting jobs
 
-Above the **Create New** button, there are three action buttons you can use to activate, cancel, and delete jobs. To take these actions on one or more jobs, select each job by clicking its checkbox next to its Job ID.
+Near the **Create New** button, there are three action buttons you can use to activate, cancel, and delete jobs. To take these actions on one or more jobs, select each job by clicking its checkbox next to its Job ID.
 
 ### Activate Selected Jobs Now
 Click this button to enable all selected deferred jobs to be activated for processing.
@@ -71,21 +71,21 @@ Sometimes a job needs to be canceled. For example, the job has stalled or is tak
 
 Once a job has been started, all process IDs are visible within the job's monitor. The following shows that a job was started using the *Run As* feature, and thus created three process IDs: the package execution process (EspSisExec.exe), the elevated *Run As* package execution process (EspSisExecRunAs.exe), and the package payload (in this example, Dotter.exe).
 
-![Monitor Canceled Job](_books/itom-user-guide/jobs/images/monitor-canceled-jobs.png)
-
-Another way to identify the running process is to use the above PIDs on the target device by listing the device process list. On a Windows device, you can do this in the Task Manager or via the command line using tasklist.exe.
-
 ![Tasklist](_books/itom-user-guide/jobs/images/canceled-job-tasklist.png)
+
+Another way to identify the running process is to use the above process IDs on the target device by listing the device process list. On a Windows device, you can do this in the Task Manager or via the command line using tasklist.exe.
+
+![Monitor Canceled Job](_books/itom-user-guide/jobs/images/monitor-canceled-jobs.png)
 
 Click the **Cancel** button to set the status to *Canceling*. Once the processes are terminated, the job's status will be set to *Canceled*.
 
 ![Cancel Request Sent](_books/itom-user-guide/jobs/images/cancel-request-sent.png)
 
 :::tip
-In most cases, just canceling a job should suffice. However, in cases where this option fails, an abort option is available to force the termination, accessed via the job's *Details* action buttons.
+In most cases, just canceling a job should suffice. However, in cases where this option fails, an abort option is available to force the termination, accessed via the job's **Details** action buttons.
 :::
 
 ### Delete Selected Jobs
-You can delete a job only when its status is not one of the *Active* statuses. Click the *Delete* button to delete a job. The job will be removed from the Job Queue list and will no longer be accessible.
+You can delete a job only when its status is not one of the Active statuses (*Processing Output* or *Starting*). To delete a job, click the **Delete** button. The job will be removed from the Job Queue list and will no longer be accessible.
 
 <!-- https://wiki.hornbill.com/index.php?title=Job_Queue -->
