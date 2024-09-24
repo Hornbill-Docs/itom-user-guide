@@ -21,40 +21,40 @@ The retrieved data serves as a valuable source for importing assets into the Ser
 ![Create Discovery Job](_books/itom-user-guide/jobs/images/create-discovery-job.png)
 
 ## Job properties
-* **Name**<br>Name given to identify this discovery job
-* **Site Target [Group / Server ]**<br>Whether the job needs to run on an SIS Group or a single SIS/Managed CI
-* **Protocol**<br>A device is identified as discovered once it can be accessed and its inventory retrieved. This is achieved by probing its operating system (OS) using various methods depending on the device's OS. The probe is initiated from the SIS server and does not require any software to be uploaded to the device. To achieve this, a protocol will be required for the SIS to access the device. Which protocol will depend on the OS and what is supported. In general, for Windows devices, WMI is used along with DCOM or WinRM; for Linux / Unix (including Apple Mac) Secure Shell (SSH) is used.
-    * ***Auto***<br>Will attempt to access the device using all of the provided protocols, in the following order; WinRM, DCOM and SSH, using the first successful one.
-    * ***WinRm***<br>Provides secure and firewall-friendly communications, to access the WMI. This feature is supported on Windows 2008R2 and later and Windows 7 and later.
-    * ***DCOM***<br>Communication relies on Remote Procedure Calls and can be tricky to configure over firewalls. Widely supported on the Windows platform, this protocol is mainly used to access legacy devices.
-    * ***SSH***<br>Secure Shell is a network communication protocol that allows for remote connection between two computers to communicate and share data, commonly used but not exclusively by Linux / Unix (inc Apple Mac) devices. The protocol can be used on Windows devices but may require additional software to be installed and configured.
-* **Discovery Mode**<br>The [discovery mode](/itom-user-guide/jobs/discovery-job#discovery-modes) dictates the method that identifies devices on the network. Each mode will have specific settings; these will be visible in the Discovery Mode Settings section. Each job can have only a single mode; if more than one mode is required, you must create a new job for each one.
-* **Priority**<br>Set the job's priority. The highest priority, *Urgent - Execute the Job as soon as possible*, pushes the job to the top of the queue. The lowest priority, *to *Only execute the job when the server is in idle mode*, pushes the job to the bottom of the queue.
-* **Ping Check Settings**<br>
-    * ***Ping check discovered***<br>[Yes / No] Check that the discovered machine is pinged - if ICMP is disabled or firewalled, then select **No**, as this can cause the discovery to be significantly slower.
-    * ***Timeout***<br>
-    * ***Hop Count***<br>
+* **Name.** Identifies the discovery job.
+* **Site Target [Group / Server ].** Indicates whether the job needs to run on an SIS Group or a single SIS/Managed CI.
+* **Protocol.** A device is identified as discovered once it can be accessed and its inventory retrieved. This is achieved by probing its operating system (OS) using various methods depending on the device's OS. The probe is initiated from the SIS server and does not require any software to be uploaded to the device. To achieve this, a protocol will be required for the SIS to access the device. Which protocol will depend on the OS and what is supported. In general, for Windows devices, WMI is used along with DCOM or WinRM; for Linux / Unix (including Apple Mac) Secure Shell (SSH) is used.
+    * **Auto.** Will attempt to access the device using all of the provided protocols, in the following order; WinRM, DCOM and SSH, using the first successful one.
+    * **WinRm.** Provides secure and firewall-friendly communications, to access the WMI. This feature is supported on Windows 2008R2 and later and Windows 7 and later.
+    * **DCOM.** Communication relies on Remote Procedure Calls and can be tricky to configure over firewalls. Widely supported on the Windows platform, this protocol is mainly used to access legacy devices.
+    * **SSH.** Secure Shell is a network communication protocol that allows for remote connection between two computers to communicate and share data, commonly used but not exclusively by Linux / Unix (inc Apple Mac) devices. The protocol can be used on Windows devices but may require additional software to be installed and configured.
+* **Discovery Mode.** The [discovery mode](/itom-user-guide/jobs/discovery-job#discovery-modes) dictates the method that identifies devices on the network. Each mode will have specific settings; these will be visible in the Discovery Mode Settings section. Each job can have only a single mode; if more than one mode is required, you must create a new job for each one.
+* **Priority.** Set the job's priority. The highest priority, *Urgent - Execute the Job as soon as possible*, pushes the job to the top of the queue. The lowest priority, *to *Only execute the job when the server is in idle mode*, pushes the job to the bottom of the queue.
+* **Ping Check Settings.**
+    * **Ping check discovered.** [Yes / No] Check that the discovered machine is pinged - if ICMP is disabled or firewalled, then select **No**, as this can cause the discovery to be significantly slower.
+    * **Timeout.**
+    * **Hop Count.**
 
 ### Discovery Modes
 #### Active Directory
 Searches Active Discovery to provide a list of Windows Devices (Servers, Domain Controllers and Workstations) from a defined starting point (search base) within the Directory, and recurse through all Domains, Containers and OUs.
 
-* **Container**<br>Specifies the starting point (search base), within the directory tree. Enter the FQDN to specify the root of a domain, if specifying a container or OU add a "/" and its name domain.local/Users.
-* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+* **Container.** Specifies the starting point (search base), within the directory tree. Enter the FQDN to specify the root of a domain, if specifying a container or OU add a "/" and its name domain.local/Users.
+* **Admin Credentials.** Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
 
 #### LDAP Server
 Connects to a directory service that supports the LDAP protocol in order to extract a list of devices to be discovered. A recursive search is performed from the specified LDAP root retrieving resources with the attribute objectClass set to "computer". Additional search criteria can be provided via the use of standard search strings.
 
-* **LDAP Server**<br>The hostname, FQDN or IP address of the server where the Directory Service is hosted.
-* **LDAP Root Directory**<br>The distinguished name specifying the starting location from within the directory, if blank then the entire directory will be scanned.
-* **LDAP Filter**<br>Standard LDAP search criteria
-* **LDAP Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password or LDAP authentication, if not supplied then anonymous access will be attempted. The account used must have the required read permission to access the Directory.
-* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+* **LDAP Server.** The hostname, FQDN or IP address of the server where the Directory Service is hosted.
+* **LDAP Root Directory.** The distinguished name specifying the starting location from within the directory, if blank then the entire directory will be scanned.
+* **LDAP Filter.** Standard LDAP search criteria
+* **LDAP Credentials.** Account details created in the Hornbill Keysafe of type Username + Password or LDAP authentication, if not supplied then anonymous access will be attempted. The account used must have the required read permission to access the Directory.
+* **Admin Credentials.** Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
 
 #### Manual List
 The manual list allows for one or more device names or addresses to be used by the discovery process, entries can be in the form of any of the following:
 
-* **Machine / IP / CIDR List**<br>One or more of the following (separated by spaces): FQDN, Hostname, IP or CIDR list
+* **Machine / IP / CIDR List.** One or more of the following (separated by spaces): FQDN, Hostname, IP or CIDR list.
 
     ||Example|
     |-|-|
@@ -62,27 +62,27 @@ The manual list allows for one or more device names or addresses to be used by t
     |IP Address|Single IP Address x.x.x.x (192.168.1.1)<br>IP Range x.x.x.x-x (192.168.0.1-254) Provides a list 254 addresses (192.168.0.1 -> 192.168.0.254)<br>IP Range x.x.x.x-x.x (192.168.0.1-255.254) Provides a list 65534 addresses (192.168.0.1 -> 192.168.255.254)
     |CIDR|x.x.x.x/x (192.168.0.0/24) Provides a list 254 addresses (192.168.0.1 -> 192.168.0.254)
 
-* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+* **Admin Credentials.** Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
 
 #### Network Enumeration
 Utilizes the Windows NT Computer Browser Service to retrieve a list of devices actively connected to the network. For each Job, only member devices from a single DOMAIN or WORKGROUP can be returned, thus a separate job will be required for each. It may be necessary to enable the Computer Browser Service on at least one Windows computer if so we recommend that this is done on the server hosting the SIS. It may also be required to enable NetBIOS over TCP/IP on all the individual Windows computers. In order to discover Windows computers that are a member of a Workgroup, at least one of the computers within the workgroup will also require the Computer Browser service to be enabled.
 
-* **Domain**<br>The NetBios name given to the AD Domain or Windows Workgroup.
-* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+* **Domain.** The NetBios name given to the AD Domain or Windows Workgroup.
+* **Admin Credentials.** Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
 
 #### Browser Service List
 Utilizes the Windows NT Computer Browser Service to retrieve a list of devices actively connected to the network. For each Job, only member devices from a single DOMAIN or WORKGROUP can be returned, thus a separate job will be required for each. It may be necessary to enable the Computer Browser Service on at least one Windows computer if so we recommend that this is done on the server hosting the SIS. It may also be required to enable NetBIOS over TCP/IP on all the individual Windows computers. In order to discover Windows computers that are a member of a Workgroup, at least one of the computers within the workgroup will also require the Computer Browser service to be enabled.
 
-* **Domain**<br>The NetBios name given to the AD Domain or Windows Workgroup
-* **Admin Credentials**<br>Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
+* **Domain.** The NetBios name given to the AD Domain or Windows Workgroup
+* **Admin Credentials.** Account details created in the Hornbill Keysafe of type Username + Password, if not supplied then the Windows NT Service Account used for the SIS will be used. In both cases, the account used must have the required read permission to access Active Directory and administrative rights to access the retrieved devices.
 
 ## Job details
 Once a job is completed, information is displayed in the Monitor and Console Output, including debug logging that can help with troubleshooting failures.
 
-* **Summary**<br>The current status of the job and its name, along with who created it and when.
-* **Discovery Options**<br>Details of the options used by the discovery process. This information will differ depending on the discovery mode used.
-* **Target Information**<br>Details of the SIS server that will facilitate the job, the target machine, and the credentials used.
-* **Execution Details**<br>When the job was started and completed along with any result code.
+* **Summary.** The current status of the job and its name, along with who created it and when.
+* **Discovery Options.** Details of the options used by the discovery process. This information will differ depending on the discovery mode used.
+* **Target Information.** Details of the SIS server that will facilitate the job, the target machine, and the credentials used.
+* **Execution Details.** When the job was started and completed along with any result code.
 
 ### Execution log
 The execution Log provides information relating to the execution of the job. The details shown depend on the method of discovery used.
@@ -105,9 +105,9 @@ When the discovery may have failed or completed incorrectly, you can view the de
 
 The log provides three sections:
 
-* **Full**<br>Full debug log information.
-* **Standard**<br>Information log entries.
-* **Problem**<br>Warning and error entries that may identify potential problems.
+* **Full.** Full debug log information.
+* **Standard.** Information log entries.
+* **Problem.** Warning and error entries that may identify potential problems.
 
 :::tip
 The sections output will depend on the job, and thus some sections may not be available.
