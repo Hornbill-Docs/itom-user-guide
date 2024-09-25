@@ -53,7 +53,7 @@ When creating an IT Automation job, you must know the package to use and the rel
 Credentials are required to execute jobs with the permissions and rights necessary to complete the task. Depending on the job type and the package used, one or more credentials may need to be specified.
 
 * **Admin credentials.** Used when the package is deployed to the target machine and must have administration rights on the target.
-* **Run As credentials.** Once deployed, the package will need to be executed. By default, this will use the security context of that provided by the Admin credentials. In some scenarios, alternative rights may also be required; it is the Run As credentials that will be used to provide an additional credential for this purpose.
+* **Run As credentials.** Once deployed, the package will need to be executed. By default, this will use the security context of that provided by the Admin credentials. In some scenarios, alternative rights may also be required; it is the Run As credentials that will be used to provide additional rights for this purpose.
 
     :::tip
     When no credentials are specified, the Service account used for the SIS that facilitates the execution of the job is employed. By default, the local System account will not have the correct rights to deploy or execute any package on a computer other than the one that the SIS is installed on.
@@ -61,7 +61,7 @@ Credentials are required to execute jobs with the permissions and rights necessa
 
 ## Activating, canceling, and deleting jobs
 
-Near the **Create New** button, there are three action buttons you can use to activate, cancel, and delete jobs. To take these actions on one or more jobs, select each job by clicking its checkbox next to its Job ID.
+Near the **Create New** button, there are three action buttons you can use to activate, cancel, and delete jobs. To take any of these actions on one or more jobs, select each job by clicking its checkbox next to its Job ID.
 
 ### Activate Selected Jobs Now
 Click this button to enable all selected deferred jobs to be activated for processing.
@@ -86,6 +86,6 @@ In most cases, just canceling a job should suffice. However, in cases where this
 :::
 
 ### Delete Selected Jobs
-You can delete a job only when its status is not one of the Active statuses (*Processing Output* or *Starting*). To delete a job, click the **Delete** button. The job will be removed from the Job Queue list and will no longer be accessible.
+You can delete a job only when its status is not one of the Active statuses (*Processing Output* or *Starting*). To delete a job, click the **Delete Selected Jobs** button. The job will be removed from the Job Queue list and will no longer be accessible.
 
 <!-- https://wiki.hornbill.com/index.php?title=Job_Queue -->
