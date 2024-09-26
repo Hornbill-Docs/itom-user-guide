@@ -1,4 +1,4 @@
-# Discovery Job
+# Discovery job
 With discovery jobs, you can find all devices operating within your organization.
 
 You initiate the process of discovery through a designated SIS server, using one of the various discovery methods available. This crucial step requires the provision of Admin credentials through the secure Hornbill KeySafe, which must have been previously established. Once an IP address has been identified, the device's details are retrieved using advanced methods such as WMI via DCOM, WinRM, or SSH. The SIS server initiates a probe on the device’s operating system (OS) using various methods depending on the OS. No software needs to be uploaded to the device. The information retrieved is then used to mark the device as discovered, and stored in the inventory for future reference.

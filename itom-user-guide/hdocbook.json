@@ -4,7 +4,7 @@
   "description": "IT Operations Management User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "com.hornbill.itom",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "audience": [
     "public"
   ],
