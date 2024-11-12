@@ -8,9 +8,9 @@ To ensure accuracy and completeness, an optional ping request can be sent to eac
 The retrieved data serves as a valuable source for importing assets into the Service Manager application, providing a seamless integration of information for efficient management. With this advanced discovery process, organizations can stay on top of their assets and ensure optimal performance and security.
 
 ## Topics covered
-- [Creating a discovery job](/creating-a-discovery-job)
-- [Job properties](/job-properties)
-- [Job details](/job-details)
+- [Creating a discovery job](#creating-a-discovery-job)
+- [Job properties](#job-properties)
+- [Job details](#job-details)
 
 ## Creating a discovery job
 1. In the ITOM application, navigate to Job Queue.

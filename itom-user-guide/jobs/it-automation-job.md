@@ -2,9 +2,9 @@
 IT Automation jobs are executed on Managed Devices selected from within the ITOM Inventory and can be initiated from various sources such as a Hornbill Business Process or AutoTask. Jobs can be executed on an ad-hoc basis as well as scheduled, or via a Runbook process, all configured via the Hornbill Administration portal. Packages are used to provide the automation payload and may require prerequisites to be in place along with security credentials. This information and details of all configurable parameters are provided via the Package documentation found in the ITOM Package Library.
 
 ## Topics covered
-- [Creating an IT Automation job](/creating-an-it-automation-job)
-- [Job properties](/job-properties)
-- [Job details](/job-details)
+- [Creating an IT Automation job](#creating-an-it-automation-job)
+- [Job properties](#job-properties)
+- [Job details](#job-details)
 
 ## Creating an IT Automation job
 1. In the ITOM application, navigate to Job Queue.

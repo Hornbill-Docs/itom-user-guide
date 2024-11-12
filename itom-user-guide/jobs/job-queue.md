@@ -4,10 +4,10 @@ Use the Job Queue to create, view, and manage active and completed jobs. You can
 When a job completes successfully or fails, you can view the debug log for information that can be of use when troubleshooting issues. The output provided will depend on the package or discovery job that has been executed.
 
 ## Topics covered
-- [Job Queue list](/job-queue-list)
-- [Job Queue toolbar](/job-queue-toolbar)
-- [Creating new jobs](/creating-new-jobs)
-- [Activating, canceling, and deleting jobs](/activating-canceling-and-deleting-jobs)
+- [Job Queue list](#job-queue-list)
+- [Job Queue toolbar](#job-queue-toolbar)
+- [Creating new jobs](#creating-new-jobs)
+- [Activating, canceling, and deleting jobs](#activating-canceling-and-deleting-jobs)
 
 ## Job Queue list
 
