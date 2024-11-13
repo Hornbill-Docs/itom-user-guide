@@ -23,7 +23,7 @@ The retrieved data serves as a valuable source for importing assets into the Ser
 1. Enter the relevant Discovery Mode settings and admin credentials.
 1. Click **Create**.
 
-![Create Discovery Job](_books/itom-user-guide/jobs/images/create-discovery-job.png)
+![Create Discovery Job](/_books/itom-user-guide/jobs/images/create-discovery-job.png)
 
 ## Job properties
 * **Name.** Identifies the discovery job.
@@ -94,7 +94,7 @@ Once a job is completed, information is displayed in the Monitor and Console Out
 ### Execution log
 The execution log provides information relating to the execution of the job. The details shown depend on the method of discovery used.
 
-![Monitor Discovery Job](_books/itom-user-guide/jobs/images/monitor-discovery-job.png)
+![Monitor Discovery Job](/_books/itom-user-guide/jobs/images/monitor-discovery-job.png)
 
 The above example shows that discovery has started and has initiated two processes on the SIS server: a standalone (EspSiSExec.exe) and a payload (ESPSisDiscovery.exe).
 
@@ -103,12 +103,12 @@ The console output shows the process and confirmation of successful completion o
 ### Console Output
 The console output is accessible once the job has been completed and will contain only the output produced by the payload, including any error messages.
 
-![Console Discovery Job](_books/itom-user-guide/jobs/images/console-discovery-job.png)
+![Console Discovery Job](/_books/itom-user-guide/jobs/images/console-discovery-job.png)
 
 ### Debug Log
 When the discovery may have failed or completed incorrectly, you can view the debug log to see errors and other technical information.
 
-![Debug Discovery Job](_books/itom-user-guide/jobs/images/debug-discovery-job.png)
+![Debug Discovery Job](/_books/itom-user-guide/jobs/images/debug-discovery-job.png)
 
 The log provides one or more of three possible sections, depending on the job:
 

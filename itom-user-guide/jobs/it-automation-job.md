@@ -21,7 +21,7 @@ IT Automation jobs are executed on Managed Devices selected from within the ITOM
 
 ## Job properties
 
-![IT Automation Job Properties](_books/itom-user-guide/jobs/images/it-automation-job.png)
+![IT Automation Job Properties](/_books/itom-user-guide/jobs/images/it-automation-job.png)
 
 * **Name.** Identifies the IT Automation job.
 * **Package.** The package used to provide the IT Automation payload.
@@ -36,7 +36,7 @@ IT Automation jobs are executed on Managed Devices selected from within the ITOM
 ## Job details
 Once the job has been created, details will be displayed showing information relating to the job, including the status of the job. Monitoring, Console and Debug Logging are provided for displaying the job's progress and to aid with troubleshooting any failures.
 
-![IT Automation Job Details](_books/itom-user-guide/jobs/images/it-automation-job-details.png)
+![IT Automation Job Details](/_books/itom-user-guide/jobs/images/it-automation-job-details.png)
 
 * **Summary.** Shows the current status of the job and its name along with who created it and when.
 * **Package Details.** Displays details of the deployment package and configured operation along with any parameters that were specified and the job timeout limit.
@@ -46,7 +46,7 @@ Once the job has been created, details will be displayed showing information rel
 ### Monitor
 The Monitor frame provides information relating to the execution of the job. The details shown will be dependent on the type of discovery or package that is being executed.
 
-![Monitor IT Automation Job](_books/itom-user-guide/jobs/images/monitor-it-automation-job.png)
+![Monitor IT Automation Job](/_books/itom-user-guide/jobs/images/monitor-it-automation-job.png)
 
 The above example shows that the process has started and provides an ID, which can be used to identify the task executing the package on the target machine. Depending on the package configuration, the monitor will specify more than the process ID. In the above case, the package is configured to execute an executable program as a specific user, using the Run As credentials. The first ID is for the process that triggers the package execution, which triggers another process to run an executable using the provided credentials.
 
@@ -55,12 +55,12 @@ All console output from the process will be displayed after this and will depend
 
 Once the job has completed, the Console Output and Debug Log frames become enabled. The Console Output contains only the output produced by the payload, including any error messages.
 
-![IT Automation Console](_books/itom-user-guide/jobs/images/it-automation-console.png)
+![IT Automation Console](/_books/itom-user-guide/jobs/images/it-automation-console.png)
 
 ### Debug Log
 In cases where the package may have failed or been completed incorrectly, you can view the debug log to see errors and other technical information.
 
-![IT Automation Debug Log](_books/itom-user-guide/jobs/images/it-automation-debug.png)
+![IT Automation Debug Log](/_books/itom-user-guide/jobs/images/it-automation-debug.png)
 
 The log provides one or more of three possible sections, depending on the job:
 

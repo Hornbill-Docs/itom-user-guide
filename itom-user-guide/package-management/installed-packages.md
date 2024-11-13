@@ -1,7 +1,7 @@
 # Installed Packages
 Provides the ability to view and manage installed packages, including the ability to install / update packages via the Package Library and manually upload them. Packages that Hornbill provides are published to the package library and will be fully supported and maintained.
 
-![Installed Package List](_books/itom-user-guide/package-management/images/installed-package-list.png)
+![Installed Package List](/_books/itom-user-guide/package-management/images/installed-package-list.png)
 
 ## Packages Tool Bar
 * **Refresh**<br>A refresh of the list may be required to display any new devices that were discovered while you are viewing the list.
@@ -43,7 +43,7 @@ The Package Library List enables for the Installation and Updating of published 
 
 ### Package Library List
 
-![Package Library List](_books/itom-user-guide/package-management/images/package-library.png)
+![Package Library List](/_books/itom-user-guide/package-management/images/package-library.png)
 
 * **Name**<br>Name of the Installed Package.
 * **Purpose**<br>Shows a summary of what the package interfaces with.

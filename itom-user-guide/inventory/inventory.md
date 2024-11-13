@@ -47,7 +47,7 @@ Select multiple items from the list to execute actions on more than one item. To
 ## Device properties
 Click on the device name to display properties discovered for the selected item. The following information is available:
 
-![Device Properties](_books/itom-user-guide/inventory/images/device-properties.png)
+![Device Properties](/_books/itom-user-guide/inventory/images/device-properties.png)
 
 * **Summary.** Name, Discovered On, Ping, and DNS.
 * **Manufacturer / Hardware.** Model, Serial Number, CPU, and Memory.

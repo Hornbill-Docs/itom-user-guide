@@ -11,7 +11,7 @@ When a job completes successfully or fails, you can view the debug log for infor
 
 ## Job Queue list
 
-![Job Queue List](_books/itom-user-guide/jobs/images/job-queue-list.png)
+![Job Queue List](/_books/itom-user-guide/jobs/images/job-queue-list.png)
 
 * **Job Id.** The job identification number.
 * **Name.** The name provided for the job when created.
@@ -71,15 +71,15 @@ Sometimes a job needs to be canceled. For example, the job has stalled or is tak
 
 Once a job has been started, all process IDs are visible within the job's monitor. The following shows that a job was started using the *Run As* feature, and thus created three process IDs: the package execution process (EspSisExec.exe), the elevated *Run As* package execution process (EspSisExecRunAs.exe), and the package payload (in this example, Dotter.exe).
 
-![Tasklist](_books/itom-user-guide/jobs/images/canceled-job-tasklist.png)
+![Tasklist](/_books/itom-user-guide/jobs/images/canceled-job-tasklist.png)
 
 Another way to identify the running process is to use the above process IDs on the target device by listing the device process list. On a Windows device, you can do this in the Task Manager or via the command line using tasklist.exe.
 
-![Monitor Canceled Job](_books/itom-user-guide/jobs/images/monitor-canceled-jobs.png)
+![Monitor Canceled Job](/_books/itom-user-guide/jobs/images/monitor-canceled-jobs.png)
 
 Click the **Cancel** button to set the status to *Canceling*. Once the processes are terminated, the job's status will be set to *Canceled*.
 
-![Cancel Request Sent](_books/itom-user-guide/jobs/images/cancel-request-sent.png)
+![Cancel Request Sent](/_books/itom-user-guide/jobs/images/cancel-request-sent.png)
 
 :::tip
 In most cases, just canceling a job should suffice. However, in cases where this option fails, an abort option is available to force the termination, accessed via the job's **Details** action buttons.

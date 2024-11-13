@@ -11,7 +11,7 @@ The above actions are most likely conditional based on information passed to the
 
 ## Runbooks List
 
-![Runbook List](_books/itom-user-guide/runbooks/images/runbooks-list.png)
+![Runbook List](/_books/itom-user-guide/runbooks/images/runbooks-list.png)
 
 * **Runbook**<br>The name of the Runbook.
 * **Category**<br>Runbook Category.
@@ -29,7 +29,7 @@ The above actions are most likely conditional based on information passed to the
 
 ## Toolbar
 
-![Runbook List](_books/itom-user-guide/runbooks/images/runbooks-toolbar.png)
+![Runbook List](/_books/itom-user-guide/runbooks/images/runbooks-toolbar.png)
 
 * **Filter**<br>Free Text Filter on Runbook, Category & Created By.
 * **Dropdown Filter**<br>Active State filter.
@@ -41,7 +41,7 @@ The above actions are most likely conditional based on information passed to the
 ## Runbook Workflow
 One significant difference with the workflow, as used within Applications such as Service Manager, is the definition of input and output parameters. Runbook process can be called via an applications workflow, using a Runbook Process node where the process can set and use the parameters the same as for system nodes.
 
-![Runbook List](_books/itom-user-guide/runbooks/images/runbook-workflow.png)
+![Runbook List](/_books/itom-user-guide/runbooks/images/runbook-workflow.png)
 
 ### Process Nodes
 The following nodes are available for use within the Runbook processes and function mostly identically to how they work within the BPM Engine except for the parameter "Auto" and suspend features. We recommended that all parameters be manually entered or populated using variables and not The "Auto" feature, which relies on executing within the context of an application. Any nodes that can suspend the process will not be available for use within a Runbook, as they should be able to execute with no user interaction seamlessly.
@@ -57,7 +57,7 @@ The following nodes are available for use within the Runbook processes and funct
 
 ### Runbook Process Settings
 
-![Runbook List](_books/itom-user-guide/runbooks/images/runbook-workflow-settings.png)
+![Runbook List](/_books/itom-user-guide/runbooks/images/runbook-workflow-settings.png)
 
 * **Input Parameters**<br>Parameters which can be used throughout the process.
 * **Output Parameters**<br>Parameters which will be passed on to the calling process.

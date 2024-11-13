@@ -7,7 +7,7 @@ A form-based editor simplifies the uploading and organizing of resources. These 
 
 In addition to uploading files, you can also create and edit various file types via a browser-based editor that supports syntax highlighting.
 
-![Package Creator List](_books/itom-user-guide/package-management/images/package-list.png)
+![Package Creator List](/_books/itom-user-guide/package-management/images/package-list.png)
 
 ## Topics covered
 * [Toolbar](/itom-user-guide/package-management/package-creator#toolbar)
@@ -56,7 +56,7 @@ The package editor displays a list of resources used, one of which is the Packag
 
 ### Package content toolbar
 
-![Package Content](_books/itom-user-guide/package-management/images/package-content.png)
+![Package Content](/_books/itom-user-guide/package-management/images/package-content.png)
 
 
 * **Upload.** Uploads files to the current folder.
@@ -68,7 +68,7 @@ The package editor displays a list of resources used, one of which is the Packag
 ## Package information
 The Package Info file is viewed and modified via a form, displayed by default when entering the editor or whenever the file is selected. The following details can be edited via the form excluding the Package ID and Name.
 
-![Package Properties](_books/itom-user-guide/package-management/images/package-properties.png)
+![Package Properties](/_books/itom-user-guide/package-management/images/package-properties.png)
 
 * **Package ID.** A GUID that uniquely identifies the package will be generated on creation.
 * **Package.** The name of the package entered during creation.
@@ -82,7 +82,7 @@ Selecting the **XML View** button on the toolbar switches the form editor to a t
 ## Package operations
 A package must contain one or more operations; each will perform an action that can be defined using one of a number of command types. The command type selected will depend on the operating system to target the package and the functionality required. Some operations will require files to be created or uploaded before they can be configured, executing a script. Other operations such as those that execute as a single command can be configured via the interface provided.
 
-![Package Operations](_books/itom-user-guide/package-management/images/package-operations.png)
+![Package Operations](/_books/itom-user-guide/package-management/images/package-operations.png)
 
 **To create an operation:**
 1. Click the **Add Operation** button, located on the Package Operations section.
@@ -108,7 +108,7 @@ The selected command type determines whether a command is entered or a file is s
 ### Input parameters
 Input parameters are only required if the operation requires data to be passed to it. They allow for values to be dynamically applied at execution for use by the operation. Each parameter can be identified as required (mandatory) and given a specific data type used for basic validation. Parameters can be manually assigned or populated via variables generated within a Runbook, BPM, or Autotask process.
 
-![Package Input Params](_books/itom-user-guide/package-management/images/package-operations-input.png)
+![Package Input Params](/_books/itom-user-guide/package-management/images/package-operations-input.png)
 
 * **Requirement dropdown.** Each parameter can be specified as Required or Optional.
 * **Type dropdown.** Specifies which of the following data types that can be entered: String, Number, or Boolean. This will be used for basic validation when parameter values are entered.
@@ -131,7 +131,7 @@ Input parameters are only required if the operation requires data to be passed t
 ### Adding parameters to Options/Args
 For values to be passed to an operation command, a parameter is required in the Options/Args field. The ordering and format will depend on what is required by the target of the specified command type. Input parameters have the syntax of `{param.<parameter name>}` and are placed where the value is expected when the command is executed.
 
-![Package Operations Params Selector](_books/itom-user-guide/package-management/images/package-operation-param-selector.png)
+![Package Operations Params Selector](/_books/itom-user-guide/package-management/images/package-operation-param-selector.png)
 
 You enter parameters manually. However, if you type the letters 'pa', a list of all of the operation's input parameters is provided, from which you can select for easy entry. Entering any further characters will filter the list based on whether any entries contain the entered characters.
 
@@ -154,7 +154,7 @@ The `option` can be any text and thus allow for all formats of options and argum
 ### Output parameters
 Output parameters allow output from the package operation to be accessed after an IT automation has been executed. When executed within a BPM process or Runbook, the process can access the output parameters via self-named variables enabling the values to be used as inputs to other nodes within the process. Similar to input parameters, each output parameter can be specified as required and each is provided with a data type.
 
-![Package Output Params](_books/itom-user-guide/package-management/images/package-operations-output-params.png)
+![Package Output Params](/_books/itom-user-guide/package-management/images/package-operations-output-params.png)
 
 **To create a new parameter:**
 1. In the Add Package Operation form, click **Add Parameter**.
@@ -197,7 +197,7 @@ Utilizing the return codes can be a quick and simple way to capture output param
 
 ### Managing files
 
-![Package File Editor](_books/itom-user-guide/package-management/images/package-file-editor.png)
+![Package File Editor](/_books/itom-user-guide/package-management/images/package-file-editor.png)
 
 In addition to being able to upload files for use by operations, you can also create files directly via the interface. The editor supports the following file types and also provides enhanced usability with the use of syntax highlighting.
 
@@ -219,7 +219,7 @@ Some of the above files are restricted by default; these can be allowed by disab
 
 **To upload a file:**
 
-![Package File Upload](_books/itom-user-guide/package-management/images/package-content.png)
+![Package File Upload](/_books/itom-user-guide/package-management/images/package-content.png)
 
 1. Click the **Upload File** button.
 1. From the file list, select the file to upload.
@@ -235,7 +235,7 @@ Some of the above files are restricted by default; these can be allowed by disab
 
 The following actions are executed on individual files and folders; ensure that the correct file or folder is selected first from the file list. The menu options are context-sensitive and will only display the options relevant to the selected item.
 
-![Package File Editor Toolbar](_books/itom-user-guide/package-management/images/package-file-editor-toolbar.png)
+![Package File Editor Toolbar](/_books/itom-user-guide/package-management/images/package-file-editor-toolbar.png)
 
 **To delete a file or folder:**
 1. Select the file or folder to delete.
@@ -253,7 +253,7 @@ The **Save** button is enabled when a file is loaded into the editor and its con
 ## Baselining and publishing
 A baseline is a snapshot of a package's current state. A baseline is only available once the package is in a state where it is ready to be published (at least one package operation must exist).
 
-![Package Baseline Version](_books/itom-user-guide/package-management/images/package-content-baseline-versions.png)
+![Package Baseline Version](/_books/itom-user-guide/package-management/images/package-content-baseline-versions.png)
 
 The draft version of a package is the only version that can be updated. Once the package is ready for release, the draft copy can be baselined, creating a new version. This latest version is then available for packaging and installation on the Installed Packages list.
 
@@ -261,7 +261,7 @@ To enable the baseline once the initial package has been created, you must highl
 
 To publish and install or to download a baselined version, select the relevant version from the list. The **Baseline** button will change to the package and install when clicked. Two options are provided:
 
-![Package Draft Install](_books/itom-user-guide/package-management/images/package-content-draft-install.png)
+![Package Draft Install](/_books/itom-user-guide/package-management/images/package-content-draft-install.png)
 
 * **Package and Install.** Build the package and add to the Install Packages list, overwriting any existing version.
 * **Package and Download.** Build the package and download to the local computer.
