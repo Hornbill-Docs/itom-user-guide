@@ -1,5 +1,5 @@
 # Package Examples
-The following are some examples from the Hornbill Package Library, detailing there use for IT Automation. Packages can be utilised from within the ITOM job queue and Scheduler, as well as being accessible from within ITOM Runbooks and the Hornbill BPM tool. Additional packages are available and accessed via the ITOM Package Library.
+The following are some examples from the Hornbill Package Library, detailing there use for IT Automation. Packages can be utilized from within the ITOM job queue and Scheduler, as well as being accessible from within ITOM Runbooks and the Hornbill BPM tool. Additional packages are available and accessed via the ITOM Package Library.
 
 ### Windows Target Device Execution Requirements
 * These packages requires the installation of the Active Directory PowerShell module on the target machine executing the scripts (the correct Remote Server Administration Tools (RSAT) package for your OS version). See Remote Server Administration Tool for further information.
