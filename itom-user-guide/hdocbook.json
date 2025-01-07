@@ -4,7 +4,7 @@
   "description": "IT Operations Management User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "com.hornbill.itom",
-  "version": "0.0.36",
+  "version": "0.0.37",
   "audience": [
     "public"
   ],
@@ -56,6 +56,10 @@
           {
             "text": "Package Creator",
             "link": "itom-user-guide/package-management/package-creator"
+          },
+          {
+            "text": "Package Examples",
+            "link": "itom-user-guide/package-management/package-examples"
           }
         ]
       }
