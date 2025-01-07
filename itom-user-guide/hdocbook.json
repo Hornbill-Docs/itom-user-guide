@@ -4,7 +4,7 @@
   "description": "IT Operations Management User Guide",
   "publicSource": "https://github.com/Hornbill-Docs/itom-user-guide",
   "productFamily": "com.hornbill.itom",
-  "version": "0.0.38",
+  "version": "0.0.39",
   "audience": [
     "public"
   ],
@@ -40,7 +40,16 @@
       },
       {
         "text": "Runbooks",
-        "link": "itom-user-guide/runbooks/runbooks"
+        "items":[
+          {
+            "text": "Overview",
+            "link": "itom-user-guide/runbooks/runbooks"
+          },
+          {
+            "text": "Creating a Runbook",
+            "link": "itom-user-guide/runbooks/creating-a-runbook"
+          }
+        ]
       },
       {
         "text": "Inventory",
